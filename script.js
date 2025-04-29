@@ -194,24 +194,6 @@ function displayColleges() {
                 <p><strong>Country:</strong> ${college['Country']}</p>
                 <p><strong>College Type:</strong> ${college['College Type']}</p>
                 <p><strong>Average Fees:</strong> ${college['Average Fees']}</p>
-                <div class="circular">
-                    <div class="inner"></div>
-                    <div class="outer"></div>
-                    <div class="numb">
-                       0%
-                    </div>
-                    <div class="circle">
-                        <div class="dot">
-                            <span></span>
-                        </div>
-                        <div class="bar left">
-                            <div class="progress"></div>
-                        </div>
-                        <div class="bar right">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         `;
         

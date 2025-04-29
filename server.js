@@ -6,11 +6,28 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const College = require('./college');
 const bodyParser = require('body-parser');
-app.use(cors());
 
-mongoose.connect('mongodb+srv://myAtlasDBUser:gJjlIxGqpR26avE5@cluster0.7i2ldxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-    .then(() => {
+app.use(cors());
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://localhost:27017/CollegePicker-Anay')
+    .then(async () => {
         console.log('Database has been connected');
+        
+        const collegeCount = await College.countDocuments();
+        if (collegeCount === 0) {
+            console.log('No colleges found. Importing CSV data...');
+            const csvFilePath = 'engineering colleges in India.csv';
+            try {
+                const jsonObj = await csv().fromFile(csvFilePath);
+                await College.insertMany(jsonObj);
+                console.log('Data inserted successfully on server startup.');
+            } catch (err) {
+                console.error('Error inserting data on startup:', err);
+            }
+        } else {
+            console.log(`Database already has ${collegeCount} colleges.`);
+        }
     })
     .catch(err => {
         console.error('Database connection error:', err);
@@ -20,6 +37,7 @@ app.get('/', (req, res) => {
     res.send('Response from server');
 });
 
+// This route is now optional because import happens on startup
 app.get('/csvData', (req, res) => {
     console.log('Received request for /csvData');
     const csvFilePath = 'engineering colleges in India.csv';
@@ -61,16 +79,15 @@ app.get('/colleges', async (req, res) => {
             'College Type': 1,
             'Average Fees': 1,
         });
-        console.log('Colleges data:', colleges);
+        console.log('Colleges data:', colleges.length);
         res.status(200).json(colleges);
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).send('Error fetching data');
     }
 });
-let users = []; // Temporary storage (use a database in production)
 
-app.use(bodyParser.json());
+let users = []; // Temporary storage (use a database in production)
 
 // Sign Up
 app.post('/signup', (req, res) => {
@@ -94,4 +111,3 @@ app.post('/signin', (req, res) => {
 });
 
 app.listen(3800, () => console.log('Server running on port 3800'));
-
