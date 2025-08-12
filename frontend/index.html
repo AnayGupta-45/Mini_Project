@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CollegePicker - Find Your Perfect College</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <img src="./assets/photos/university_8233821.png" alt="CollegePicker Logo">
+      CollegePicker
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="auth-buttons" id="authButtons">
+      <!-- Buttons will be dynamically added here -->
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Find Your Perfect College with <span class="highlight">CollegePicker</span></h1>
+      <p>Your journey to the right institution starts here. We provide personalized recommendations and detailed college information to help you make an informed decision.</p>
+      <button class="cta-button" onclick="startSearch()">Start Searching Colleges</button>
+    </div>
+    <div class="hero-image">
+      <img src="./assets/photos/school-students-digital-art-style-education-day.jpg" alt="Students studying together"/>
+    </div>
+  </section>
+
+  <!-- Top Colleges Section -->
+  <section class="top-colleges" id="college">
+    <div class="section-header">
+      <img src="./assets/photos/trophy_3256529.png" alt="Trophy icon">
+      <h2>India's Top Colleges</h2>
+    </div>
+    <div class="college-logos">
+      <div class="logo-row">
+        <img src="https://upload.wikimedia.org/wikipedia/sa/d/da/IIT_Bombay_logo.png" alt="IIT Bombay logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Lovely_Professional_University_logo.png" alt="LPU logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Banaras_Hindu_University_Emblem_Seal_Transparent.png/200px-Banaras_Hindu_University_Emblem_Seal_Transparent.png" alt="BHU logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/640px-IIT_Madras_Logo.svg.png" alt="IIT Madras logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Aligarh_Muslim_University_logo.png/200px-Aligarh_Muslim_University_logo.png" alt="AMU logo">
+      </div>
+      <div class="logo-row">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/42/GLA_University_logo.png" alt="GLA University logo">
+        <img src="https://seeklogo.com/images/I/indian-institute-of-technology-delhi-logo-CDE3FA8BD3-seeklogo.com.png" alt="IIT Delhi logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Jawaharlal_Nehru_University_Logo_vectorized.svg" alt="JNU logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/ff/Amity_University_logo.png" alt="Amity University logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Chandigarh_University_Seal.png" alt="Chandigarh University logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-card">
+      <img src="./assets/photos/About us.png" alt="Group of students" class="about-image">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>Welcome to CollegePicker, your trusted partner in finding the perfect college. We provide detailed college information, advanced search tools, and personalized recommendations. Our mission is to empower students with accurate information to make informed decisions that align with their academic and career goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="value-card">
+      <img src="./assets/photos/target_9550900.png" alt="Target icon">
+      <h3>Our Mission</h3>
+      <p>Empowering students with accurate and personalized college information to help them make informed decisions.</p>
+    </div>
+    <div class="value-card">
+      <img src="./assets/photos/vision_2421304.png" alt="Vision icon">
+      <h3>Our Vision</h3>
+      <p>To revolutionize the college selection process by providing innovative, user-friendly, and accessible tools.</p>
+    </div>
+    <div class="value-card">
+      <img src="./assets/photos/diamond_4868639.png" alt="Diamond icon">
+      <h3>Our Values</h3>
+      <p>We are committed to transparency, accessibility, and unwavering support for every student on their journey.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question? Enter your email below and we'll connect you with the right person.</p>
+    <form class="contact-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit" class="cta-button">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="copyright">© 2024 CollegePicker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

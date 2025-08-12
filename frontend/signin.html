@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In | CollegePicker</title>
+  <link rel="stylesheet" href="./styles/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <div class="auth-header">
+      <h2>Welcome Back!</h2>
+      <p>Please sign in to continue your journey with CollegePicker.</p>
+    </div>
+    <form id="signinForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit" class="cta-button">Sign In</button>
+    </form>
+    <p class="auth-switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+
+  <script src="./scripts/auth.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
