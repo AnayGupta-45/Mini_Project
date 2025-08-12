@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Search - CollegePicker</title>
+  <link rel="stylesheet" href="./styles/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <img src="./assets/photos/university_8233821.png" alt="CollegePicker Logo" />
+      CollegePicker
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="auth-buttons" id="authButtons">
+      <!-- Buttons will be dynamically added here -->
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <main class="filter-page-container">
+    <!-- Filters Sidebar -->
+    <aside class="filters-sidebar">
+      <h2>Filters</h2>
+      <div class="filter-group">
+        <label for="search">Search Colleges</label>
+        <input type="text" id="searchInput" placeholder="Search by name...">
+      </div>
+      <div class="filter-group">
+        <label for="stateFilter">State</label>
+        <select id="stateFilter">
+          <option value="">All States</option>
+          <option>Andhra Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Tamil Nadu</option>
+          <!-- More options can be populated dynamically -->
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="typeFilter">College Type</label>
+        <select id="typeFilter">
+          <option value="">All Types</option>
+          <option>Public/Government</option>
+          <option>Private</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="ratingFilter">Rating</label>
+        <select id="ratingFilter">
+          <option value="">All Ratings</option>
+          <option value="1">⭐ 1 & up</option>
+          <option value="2">⭐⭐ 2 & up</option>
+          <option value="3">⭐⭐⭐ 3 & up</option>
+          <option value="4">⭐⭐⭐⭐ 4 & up</option>
+          <option value="5">⭐⭐⭐⭐⭐ 5</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="feeRange">Fee Range: <span id="feeValue">₹0 - ₹1,000,000</span></label>
+        <input type="range" id="feeRange" min="0" max="1000000" step="50000" value="1000000">
+      </div>
+    </aside>
+
+    <!-- College List Section -->
+    <section class="college-results" id="college-list">
+      <div class="results-header">
+        <h2>Colleges</h2>
+        <span id="collegeCount">0 results</span>
+      </div>
+      <div class="college-cards-container">
+        <div id="loadingSpinner" class="loader-container" style="display:none;">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <div class="load-more-container">
+        <button id="loadMoreButton" class="cta-button" style="display:none;">Load More</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <p class="copyright">© 2024 CollegePicker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/main.js"></script>
+  <script src="./scripts/filter.js"></script>
+</body>
+</html>
